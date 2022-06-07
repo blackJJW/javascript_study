@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        output = 0
-
-        for (let index = 0; index <= 100; index++) {
-            output += index
+        // 반복문
+        for (let i = 0; true; i++) {
+            alert(`${i} : 반복`)
+        
+            //진행여부
+            const isContinue = confirm('계속?')
+            if (!isContinue) {
+                break
+            }
         }
-        console.log(`1 ~ 100까지의 합 : ${output}`)
-
     </script>
 </head>
 <body>
