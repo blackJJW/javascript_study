@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        //나머지 매개변수를 사용한 함수 생성
-        function min(...items) {
-            //매개변수items는 배열로 사용 가능
-            let output = items[0]
-            for (const item of items) {
-                if (output > item) {
-                    output = item
-                }
-            }
-            return output
-        }
-        console.log('min(52, 273, 32, 103, 275, 24, 57)')
-        console.log(`=${min(52, 273, 32, 103, 275, 24, 57)}`)	
+        let id
+        let count = 0
+        id = setInterval(() => {
+            console.log(`1초마다 실행(${count}번)`)
+            count++
+        }, 1 * 1000)
+    
+        setTimeout(() => {
+            console.log(`타이머를 종료`)
+            clearInterval(id)
+        }, 5 * 1000)
     </script>
 </head>
 <body>
