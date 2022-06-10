@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let pi = 3.14
+        console.log(`파이 : ${pi}`)
+
+        // 블록을 사용한 스코프 생성
+        {
+            let pi = 3.1415
+            console.log(`파이 : ${pi}`)
+        }
+        console.log(`파이 : ${pi}`)
+
+        // 함수 블록을 사용한 스코프 생성
+        function sample() {
+            let pi = 3.121592
+            console.log(`파이 : ${pi}`)
+        }
+        sample()
+        console.log(`파이 : ${pi}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
