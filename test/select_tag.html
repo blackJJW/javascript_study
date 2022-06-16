@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.querySelector('select');
+            const p = document.querySelector('p');
+
+            select.addEventListener('change', (event) => {
+                const options = event.currentTarget.options;
+                const index = event.currentTarget.selectedIndex;
+
+                p.textContent = `selection : ${options[index].textContent}`;
+            });
+        });
+    </script>
+</head>
+<body>
+    <select>
+        <option>Python</option>
+        <option>JAVA</option>
+        <option>C++</option>
+        <option>JavaScript</option>
+        <option>HTML</option>
+    </select>
+    <p>선택 : Python</p>
+</body>
+</html>

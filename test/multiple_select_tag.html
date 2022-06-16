@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.querySelector('select');
+            const p = document.querySelector('p');
+
+            select.addEventListener('change', (event) => {
+                const options = event.currentTarget.options;
+                const list = [];
+                for (const option of options){
+                    // option 속성에는 forEach() 메소드가 없음
+                    // 따라서 반복문으로 돌림
+                    if(option.selected){ // selected 속성을 확인
+                        list.push(option.textContent)
+                    };
+                };
+                p.textContent = `선택 : ${list.join(',')}`;
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <select multiple>
+        <option>Python</option>
+        <option>JAVA</option>
+        <option>C++</option>
+        <option>JavaScript</option>
+        <option>HTML</option>
+    </select>
+    <p></p>
+</body>
+</html>
