@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 문서 객체 추출
+            const output = document.querySelector('#output');
+            const radios = document.querySelectorAll('[name=lang]');
+
+            // 모든 라디오 버튼
+            radios.forEach((radio) => {
+                // 이벤트 연결
+                radio.addEventListener('change', (event) => {
+                    const current = event.currentTarget;
+                    if(current.checked){
+                        output.textContent = `프로그래밍 언어 : ${current.value}`;
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3># 프로그래밍 언어를 선택</h3>
+    <input type="radio" name="lang" value="Python">
+    <span>Python</span>
+    <input type="radio" name="lang" value="Java">
+    <span>Java</span>
+    <input type="radio" name="lang" value="C++">
+    <span>C++</span>
+    <input type="radio" name="lang" value="JavaScript">
+    <span>JavaScript</span>
+    <input type="radio" name="lang" value="HTML">
+    <span>HTML</span>
+    <hr>
+    <h3 id="output"></h3> 
+</body>
+</html>
